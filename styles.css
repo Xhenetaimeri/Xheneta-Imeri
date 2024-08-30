@@ -61,26 +61,6 @@ body {
     color: #ddd; /* Légère variation de couleur au survol */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .name {
-        font-size: 2.5em;
-        margin-bottom: 15px;
-    }
-
-    .nav {
-        gap: 10px;
-    }
-
-    .nav a {
-        font-size: 1.2em;
-    }
-}
 /* Style général du footer */
 .footer {
     position: absolute;
