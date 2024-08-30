@@ -61,11 +61,3 @@ main {
     font-size: 1em; /* Taille de la police pour le texte */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .content {
-        padding: 10px;
-        margin: 10px;
-        max-width: 100%; /* Ajuste la largeur du bloc de texte pour les petits écrans */
-    }
-}
