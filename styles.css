@@ -104,41 +104,17 @@ main {
 /* Responsive Design pour les petits écrans */
 @media screen and (max-width: 768px) {
     .header {
-        flex-direction: column; /* Empile les éléments en colonne */
-        align-items: center; /* Centre les éléments horizontalement */
-        padding: 20px; /* Réduit le padding */
-    }
-
-    .name {
-        font-size: 2em; /* Réduit la taille de la police */
-        text-align: center; /* Centre le texte du nom */
-        width: 100%; /* Assure que le texte occupe toute la largeur disponible */
+        top: 40%; /* Positionne le header encore plus bas sur mobile */
     }
 
     .nav {
-        display: flex;
-        flex-direction: column; /* Empile les liens verticalement */
-        align-items: center; /* Centre les liens horizontalement */
-        gap: 15px; /* Ajuste l'espacement entre les rubriques */
-        width: 100%; /* Assure que les rubriques occupent toute la largeur disponible */
-        padding-top: 10px; /* Réduit le padding en haut */
+        right: 5px; /* Ajuste le placement des rubriques pour les petits écrans */
+        top: 50%;
+        transform: translateY(-50%);
     }
 
-    .nav a {
-        font-size: 1em; /* Réduit la taille des liens */
-        display: block; /* Assure que les liens prennent la largeur complète disponible */
-        text-align: center; /* Centre le texte à l'intérieur des liens */
-        width: 100%; /* Assure que les liens ont une largeur de 100% */
-        padding: 10px 0; /* Ajuste le padding des liens pour qu'ils aient plus de hauteur */
-
-    }
-
-    .footer {
-        font-size: 0.8em; /* Réduit la taille de la police */
-        padding: 8px; /* Réduit le padding */
-    }
-
-    .background-image {
-        padding-top: 10%; /* Ajuste la hauteur de l'image de fond */
+    .marquee {
+        bottom: 10px; /* Ajuste la position du texte défilant */
+        font-size: 20px; /* Réduit la taille pour un meilleur rendu sur mobile */
     }
 }
