@@ -7,6 +7,9 @@ body {
     height: 100vh;
     overflow: hidden; /* Empêche le défilement si l'image est plus grande que l'écran */
     position: relative; /* Pour positionner les éléments enfants correctement */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Image de fond */
@@ -16,12 +19,32 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    padding-top: 20%;
     background-image: url(24.jpg); /* Remplace 'ton-image.jpg' par le chemin de ton image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 15%; /* Ajuste cette valeur selon tes besoins */
     z-index: -1; /* Place l'image derrière le texte */
+}
+
+.marquee {
+    position: absolute;
+    top: 40%; /* Ajustez la position en fonction de vos besoins */
+    right: 100%; /* Commence en dehors de l'écran à gauche */
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    font-family: Helvetica, sans-serif; /* Utilise Helvetica pour le texte */
+    animation: marquee-animation 20s linear infinite;
+    white-space: nowrap;
+    z-index: 9999; /* Assure que le texte défilant est au-dessus des autres éléments */
+    padding: 0 20px; /* Ajoute un peu d'espace autour du texte */
+}
+
+/* Animation du texte défilant */
+@keyframes marquee-animation {
+    from { left: 100%; }
+    to { left: -100%; }
 }
 
 /* Conteneur de l'en-tête */
@@ -45,7 +68,7 @@ body {
 /* Rubriques */
 .nav {
     display: flex;
-    gap: 20px; /* Espacement entre les rubriques */
+    gap: 30px; /* Espacement entre les rubriques */
     padding-top: 15px;
     padding-right: 10px;
 }
@@ -74,33 +97,48 @@ body {
     box-sizing: border-box; /* Inclut le padding dans la largeur totale */
 }
 
-/* Pour s'assurer que le footer est toujours en bas de la page même avec peu de contenu */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 main {
     flex: 1;
 }
 
-@media (max-width: 768px) {
+/* Responsive Design pour les petits écrans */
+@media screen and (max-width: 768px) {
     .header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Empile les éléments en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
+        padding: 20px; /* Réduit le padding */
     }
 
     .name {
-        font-size: 2.5em;
-        margin-bottom: 15px;
+        font-size: 2em; /* Réduit la taille de la police */
+        text-align: center; /* Centre le texte du nom */
+        width: 100%; /* Assure que le texte occupe toute la largeur disponible */
     }
 
     .nav {
-        gap: 10px;
+        display: flex;
+        flex-direction: column; /* Empile les liens verticalement */
+        align-items: center; /* Centre les liens horizontalement */
+        gap: 15px; /* Ajuste l'espacement entre les rubriques */
+        width: 100%; /* Assure que les rubriques occupent toute la largeur disponible */
+        padding-top: 10px; /* Réduit le padding en haut */
     }
 
     .nav a {
-        font-size: 1.2em;
+        font-size: 1em; /* Réduit la taille des liens */
+        display: block; /* Assure que les liens prennent la largeur complète disponible */
+        text-align: center; /* Centre le texte à l'intérieur des liens */
+        width: 100%; /* Assure que les liens ont une largeur de 100% */
+        padding: 10px 0; /* Ajuste le padding des liens pour qu'ils aient plus de hauteur */
+
+    }
+
+    .footer {
+        font-size: 0.8em; /* Réduit la taille de la police */
+        padding: 8px; /* Réduit le padding */
+    }
+
+    .background-image {
+        padding-top: 10%; /* Ajuste la hauteur de l'image de fond */
     }
 }

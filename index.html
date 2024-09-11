@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background-image"></div>
+    <div class="background-image">
+        <!-- Texte défilant -->
+        <div class="marquee">Al Hamdulillah</div>
+        <!-- Affichage de l'heure -->
+  
+    </div>
+
     <div class="header">
         <div class="name">XHENETA IMERI</div>
         <div class="nav">
@@ -17,8 +23,22 @@
             <a href="Contact.html">Contact</a>
         </div>
     </div>
+
+    <footer class="footer">
+        <div id="datetime"></div>
+        <p>&copy; 2024 Xheneta Imeri. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const options = { timeZone: 'Europe/Zurich', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const timeString = now.toLocaleTimeString('fr-CH', options);
+            document.getElementById('datetime').textContent = `Genève, ${timeString}`;
+        }
+
+        updateTime(); // Initial call to set the time immediately
+        setInterval(updateTime, 1000); // Update time every second
+    </script>
 </body>
-<footer class="footer">
-    <p>&copy; 2024 Xheneta Imeri. Tous droits réservés.</p>
-</footer>
 </html>
